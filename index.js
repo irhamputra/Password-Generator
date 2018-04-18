@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/api/passwords', (req, res) => {
     const count = 5;
 
-    const passwords = Array.from(Array(count).keys()).map(i => passwordGenerator(12, false, /([\w])/g, 'MIP-'));
+    const passwords = Array.from(Array(count).keys()).map(i => passwordGenerator(12, false, /([\w])/g, 'RPD!*'));
 
     res.json(passwords);
     console.log(`Sent ${count} passwords`)
