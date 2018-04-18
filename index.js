@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 
 // serve a static page
-app.use(express.static(path.join(__dirname, '/public/')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // generate password
 app.get('/api/passwords', (req, res) => {
@@ -22,7 +22,7 @@ app.get('/api/passwords', (req, res) => {
 
 // match all path return to index.html
 app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/'))
+    res.sendFile(path.join(__dirname + '/client/build/index.html'))
 });
 
 // app listen
